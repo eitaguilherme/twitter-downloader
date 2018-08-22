@@ -52,11 +52,6 @@ T.get('favorites/list', { count: 200, maxId : "1003381029804150784" }, function(
             });
         }
     });
-        fs.writeFile('tweets.json',JSON.stringify(tweets), error => console.log(error));
-
-    // T.get('application/rate_limit_status', { count: 200 }, function(err,data,response){
-    //     response.limits = data.resources.favorites['/favorites/list'];
-
-    // });
+    fs.writeFile('examples/tweets.json',JSON.stringify(tweets), error => console.log(error));
 });
 
