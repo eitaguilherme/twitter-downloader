@@ -41,7 +41,7 @@
 			<div class="container" >  
 				<div class="row row-tweets">
                         <a v-for="tweet in tweets" v-bind:href="tweet.media_download_url" target="_blank" class="tweet" style="clear: both;">
-                            <img  class="card-img-top" v-bind:src="tweet.media_image_url" v-bind:text="tweet.id_str" style="float: left; height: 15em; margin-right: 1%; margin-bottom: 0.5em;">
+                            <img v-bind:src="tweet.media_image_url" v-bind:text="tweet.id_str" style="float: left; height: 15em; margin-right: 1%; margin-bottom: 0.5em;">
                         </a>
                 </div>
                 <div class="row">
