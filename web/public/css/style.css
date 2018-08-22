@@ -1,3 +1,9 @@
+.container-titulo{
+    margin-top: 10px;
+}
+.jumbotron-custom{
+    margin-top: 5px;
+}
 .tweet {
     margin: 2px;
 }
@@ -6,4 +12,29 @@
     position: absolute;
     top: 10px;
     left: 8px
+}
+
+footer{
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid white;
+}
+
+.footer-card{
+    width: 350px;
+}
+
+.footer-card h5 h6{
+    text-align: left;
+}
+
+.my-social-medias{
+    width: 300px;
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.my-social-medias li{
+    float: left;
+    margin-right: 15px;
 }

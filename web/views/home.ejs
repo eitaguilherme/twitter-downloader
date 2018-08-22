@@ -10,34 +10,33 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 	<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="/css/bootstrap.social.css"> -->
-    <link rel="stylesheet" href="/css/font-awesome.css">
-    <link rel="stylesheet" href="/css/docs.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">   
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/social-circles.min.css">
 
     <title>twitter downloader</title>
 
-    
+     
   </head>
   <body>
       <main role="main" id="app">
         <% if (!user) { %>
       
-			<div class="container">
-				<div class="row">
-					<div class="col">
-                        <h1 class="text-center">Seus tweets favoritos com vídeos e fotos num lugar facim pra você</h1>
-                        <a href="/login" class="btn btn-primary btn-block btn-social btn-lg btn-twitter">
-                            <i class="fa fa-twitter"></i>
-                            Logar com sua conta do Twitter
-                        </a>
-					</div>
-				</div>
-			</div>
+			<div class="container container-titulo">
+                <div class="row">
+                    <div class="col">
+                            <div class="jumbotron jumbotron-custom">
+                                <h1 class="display-4">GIFS/Videos favoritados do Twitter </h1>
+                                <p class="lead">Utilizo a API do Twitter (com todas as suas limitações de acesso gratuítuo) para exibir apenas seus vídeos e gifs em uma lista para fácil download</p>
+                                <hr class="my-4">
+                                <p>Não gravo nenhuma informação sua.</p>
+                                <p>Duvidas ou sugestões, meus contatos estão abaixo</p>
+                                <a class="btn btn-primary btn-lg" href="/login" role="button">Logar com sua conta do Twitter</a>
+                            </div>
+                    </div>
+                </div>
+            </div>       
         <% } else { %>
-          
-            
 			<div class="container" >  
 				<div class="row row-tweets">
                         <a v-for="tweet in tweets" v-bind:href="tweet.media_download_url" target="_blank" class="tweet" style="clear: both;">
@@ -60,9 +59,27 @@
 
             <input type="hidden" id="hidToken" value="<%= token %>">
             <input type="hidden" id="hidUrlBase" value="<%= baseurl %>">
-		<% } %>
+        <% } %>
+        
       </main>
-
+      <footer>
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+                     <div class="footer-card">
+                        <h5>Guilherme Loyola</h5>
+                        <h6>Desenvolvedor</h6>
+                        <h6><a href="mailto:guilhermeloyola@gmail.com">guilhermeloyola@gmail.com</a></h6>
+                        <ol class="my-social-medias">
+                                <li><a class="icon-github social-button borderless static" href="http://github.com/eitaguilherme"></a></li>
+                                <li><a class="icon-twitter social-button borderless static" href="http://twitter.com/fmzguilherme"></a></li>
+                         </ol>
+                     </div>
+                  </div>
+              </div>
+          </div>
+          
+      </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
@@ -76,7 +93,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-102160561-3');
     </script>
 
