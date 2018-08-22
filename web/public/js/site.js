@@ -23,7 +23,7 @@ if(token != null){
             getOlderTweets : function(){
                 
                 axios
-                    .get('http://127.0.0.1:3000/api/tweet', 
+                    .get(api_tweet_url, 
                     { 
                         headers : { 'x-access-token' : token },
                         params : { 'maxId' : this.max_id }
