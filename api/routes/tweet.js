@@ -70,10 +70,11 @@ router.get('/',function(req,res){
         let since_id;
 
         if(filter){
-            max_id = filter[filter.length-1].id_str;
-            sice_id = filter[0].id_str;
+            max_id = data[data.length-1].id_str;
+            sice_id = data[0].id_str;
         }
 
+        console.log(tweets.length);
         if(req.query.maxId)
             tweets.shift();
 

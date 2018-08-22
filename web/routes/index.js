@@ -21,7 +21,7 @@ router.get('/', function(req,res){
         expiresIn: 1440
     });
   }
-  res.render('home', { user: req.user, token: token });
+  res.render('home', { user: req.user, token: token, baseurl: process.env.baseurl.trim().concat('api/tweet') });
 });
 
 module.exports = router;

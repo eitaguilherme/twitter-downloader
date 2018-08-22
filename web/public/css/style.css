@@ -1,0 +1,9 @@
+.tweet {
+    margin: 2px;
+}
+
+.box-informacoes{
+    position: absolute;
+    top: 10px;
+    left: 8px
+}

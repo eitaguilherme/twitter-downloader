@@ -1,23 +1,22 @@
-var express = require("express");
-var path = require("path");
-var logger = require("morgan");
-var cookieParser = require("cookie-parser");
-var bodyParser = require("body-parser");
-
-var jwt = require('jsonwebtoken');
-
-var passport = require('passport');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/twitterlogin');
-
-var Strategy = require('passport-twitter').Strategy;
-var User = require('../app/models/user');
+//
+var express =         require("express");
+var path =            require("path");
+var logger =          require("morgan");
+var cookieParser =    require("cookie-parser");
+var bodyParser =      require("body-parser");
+var jwt =             require('jsonwebtoken');
+var passport =        require('passport');
+var Strategy =        require('passport-twitter').Strategy;
+var User =            require('../app/models/user');
 
 
+let callback_url =  process.env.baseurl.trim();
+console.log(callback_url.concat('twitter/return'));
+// console.log(callback_url.trim());
 passport.use(new Strategy({
-    consumerKey: "QIuvQSjQHLzzpHVU2r3xseNns",
-    consumerSecret: "qdEYaZxPnSxXRjX27q7i7nBvyuskux9vasIFlEqslpQfXH49Uo",
-    callbackURL: 'http://127.0.0.1:3000/login/twitter/return'
+    consumerKey: 'QIuvQSjQHLzzpHVU2r3xseNns',
+    consumerSecret: 'qdEYaZxPnSxXRjX27q7i7nBvyuskux9vasIFlEqslpQfXH49Uo',
+    callbackURL:  callback_url.concat('login/twitter/return')
   },
   function(token, tokenSecret, profile, cb) {
     var _screenName = profile.username;
@@ -39,8 +38,6 @@ passport.serializeUser(function(user, cb) {
 passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
-
-var routes = require("./routes/index");
 
 // Web Express App
 // ---------------
